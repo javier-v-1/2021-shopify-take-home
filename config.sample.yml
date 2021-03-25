@@ -1,0 +1,4 @@
+development:
+  password: <YOUUR_APP_PASSWORD>
+  theme_id: <YOUR_THEME_ID>
+  store: <YOU_STORE_URL>

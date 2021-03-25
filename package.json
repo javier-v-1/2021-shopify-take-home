@@ -9,10 +9,8 @@
     "theme"
   ],
   "scripts": {
-    "settings:live": "theme download config/settings_data.json -d . -e production",
-    "settings:dev": "theme download config/settings_data.json -d . -e development",
-    "download:live": "theme download -d . -e production",
     "download:dev": "theme download -d . -e development",
+    "deploy:dev": "theme deploy --env=development",
     "watch": "theme watch"
   }
 }
