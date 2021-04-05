@@ -49,7 +49,7 @@
         {% if enable_image_zoom %} data-image-zoom-wrapper data-zoom="{{ media | img_url: image_zoom_size, scale: image_scale }}"{% endif %}
         data-image-loading-animation>
         <img id="{{ media_id }}"
-          class="test feature-row__image {{ media_class }} lazyload{% unless featured_media == media %} lazypreload{% endunless %}"
+          class="feature-row__image {{ media_class }} lazyload{% unless featured_media == media %} lazypreload{% endunless %}"
           data-src="{{ img_url }}"
           data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
           data-aspectratio="{{ media.preview_image.aspect_ratio }}"
