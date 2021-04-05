@@ -9685,3 +9685,47 @@ function removeImageLoadingAnimation(image) {
     imageWrapper.removeAttribute('data-image-loading-animation');
   }
 }
+
+// Custom Theme Code
+
+/*******************************************************************************
+* Product Page
+*******************************************************************************/
+// Quantity Input
+let qtyInput    = document.getElementById('Theme-Quantity-product-template');
+let decreaseBtn = document.getElementById('qty-decrease');
+let increaseBtn = document.getElementById('qty-increase');
+
+decreaseBtn.addEventListener('click', function() {
+  let qtyValue = qtyInput.value;
+
+  if (qtyValue > 1) {
+    qtyValue--;
+    qtyInput.value = qtyValue;
+  }
+});
+
+increaseBtn.addEventListener('click', function() {
+  let qtyValue = qtyInput.value;
+
+  if (qtyValue < 99) {
+    qtyValue++;
+    qtyInput.value = qtyValue;
+  }
+});
+
+// Swatches
+let flavorSelect   = document.getElementsByClassName('flavor-select-options')[0];
+let flavorSwatches = document.querySelectorAll('.swatch-option');
+
+flavorSwatches.forEach(function(flavorSwatch) {
+  flavorSwatch.addEventListener('click', function() {
+    if (document.querySelector('.swatch-option.active')) {
+      document.querySelector('.swatch-option.active').classList.remove('active');
+    }
+
+    flavorSwatch.classList.add('active');
+    flavorSelect.value = flavorSwatch.dataset.value;
+    flavorSelect.dispatchEvent(new Event('change'));
+  });
+});
